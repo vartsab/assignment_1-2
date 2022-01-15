@@ -1,11 +1,14 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
 
         // #1
+        //System.out.println("Задача №1");
         // variable type
         var a = 100;
 
@@ -26,37 +29,67 @@ public class Main {
         boolean boo = false; // 1 bit
 
         // #2
-        float boxer1 = 78.2f;
-        float boxer2 = 82.7f;
+        System.out.println("\nЗадача №2");
+        float firstBoxerWeight = 78.2f;
+        float secondBoxerWeight = 82.7f;
 
-        System.out.println("Total weight of both boxers is " + (boxer1 + boxer2) + " kilos.");
-        System.out.println("Weight difference is " + Math.abs(boxer1 - boxer2) + " kilos.");
+        System.out.println("Total weight of both boxers is " + (firstBoxerWeight + secondBoxerWeight) + " kilos.");
+        System.out.println("Weight difference is " + Math.abs(firstBoxerWeight - secondBoxerWeight) + " kilos.");
 
         // #3
-        int banana = 5;
-        int milk = 200;
-        int iceCream = 2;
-        int egg = 4;
-        int breakfast;
+        System.out.println("\nЗадача №3");
+        int bananasNumber = 5;
+        int milkVolumeMl = 200;
+        int iceCreamPacksNumber = 2;
+        int eggsNumber = 4;
 
-        breakfast = banana * 80 + milk / 100 * 105 + iceCream * 100 + egg * 80;
+        int bananaWeight = 80;
+        int milkWeight = 105 / 100;
+        int iceCreamWeight = 100;
+        int eggWeight = 80;
 
-        System.out.println("Total weigt of the breakfast if " + breakfast + " g.");
+        int breakfastWeight = bananasNumber * bananaWeight +
+                milkVolumeMl * milkWeight +
+                iceCreamPacksNumber * iceCreamWeight +
+                eggsNumber * eggWeight;
+
+        System.out.println("Total weight of the breakfast is " + breakfastWeight + " g.");
+        System.out.println("Total weight of the breakfast is " + breakfastWeight / 1000f + " kg.");
 
         // #4
+        System.out.println("\nЗадача №4");
         int overweight = 7;
-        int lowerLimit = 250;
-        int upperLimit = 500;
+        int minWeightLossADayGram = 250;
+        int maxWeightLossADayGram = 500;
 
-        System.out.println("Weight loss will take from " + (float) overweight * 1000 / upperLimit + " to " + (float) overweight * 1000 / lowerLimit + " days.");
+        int maxDaysToLooseOverweight = overweight * 1000 / minWeightLossADayGram;
+        int minDaysToLooseOverweight = overweight * 1000 / maxWeightLossADayGram;
+        int averageDaysToLooseOverweight = (minDaysToLooseOverweight + maxDaysToLooseOverweight) / 2;
+
+        System.out.println("Loosing your extra " + overweight + " kilos will take you:");
+        System.out.println( "- at min " + minDaysToLooseOverweight + " days,");
+        System.out.println( "- at max " + maxDaysToLooseOverweight + " days,");
+        System.out.println( "or " + averageDaysToLooseOverweight + " days on average.");
 
         // #5
-        int masha = 67760;
-        int dennis = 83690;
-        int christine = 76230;
+        System.out.println("\nЗадача №5");
+        int mashaMonthlyRate = 67760;
+        int dennisMonthlyRate = 83690;
+        int christineMonthlyRate = 76230;
 
-        System.out.println("Masha's is getting " + masha * 1.1 + " rubles monthly now. Their annual income increased by " + masha * 12 * .1 + " rubles.");
-        System.out.println("Dennis's is getting " + dennis * 1.1 + " rubles monthly now. Their annual income increased by " + dennis * 12 * .1 + " rubles.");
-        System.out.println("Christine's is getting " + christine * 1.1 + " rubles monthly now. Their annual income increased by " + christine * 12 * .1 + " rubles.");
+        int rateChangedByPercent = 10;
+        int calcCycleMonths = 12;
+
+        int mashaUpdatedRate = mashaMonthlyRate * (1 + rateChangedByPercent / 100);
+        int dennisUpdatedRate = dennisMonthlyRate * (1 + rateChangedByPercent / 100);
+        int christineUpdatedRate = christineMonthlyRate * (1 + rateChangedByPercent / 100);
+
+        int mashaRaisePerCalcCycle = mashaMonthlyRate * calcCycleMonths * rateChangedByPercent / 100;
+        int dennisRaisePerCalcCycle = dennisMonthlyRate * calcCycleMonths * rateChangedByPercent / 100;
+        int christineRaisePerCalcCycle = christineMonthlyRate * calcCycleMonths * rateChangedByPercent / 100;
+
+        System.out.println("Masha's is getting " + mashaUpdatedRate + " rubles monthly now.\nTheir annual income increased by " + mashaMonthlyRate + " rubles.");
+        System.out.println("Dennis's is getting " + dennisUpdatedRate + " rubles monthly now.\nTheir annual income increased by " + dennisMonthlyRate + " rubles.");
+        System.out.println("Christine's is getting " + christineUpdatedRate + " rubles monthly now.\nTheir annual income increased by " + christineMonthlyRate + " rubles.");
     }
 }
